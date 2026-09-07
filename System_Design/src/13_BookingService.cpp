@@ -1,0 +1,6 @@
+#include <iostream>
+#include <sstream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+class BookingService { private: PriceCalculator calculator; vector<string> split(const string& in)const{vector<string> out;string x;stringstream ss(in);while(getline(ss,x,',')){x.erase(remove_if(x.begin(),x.end(),::isspace),x.end());if(!x.empty())out.push_back(x);}return out;} public: Booking* book(Customer& c,Show& show,const string& input,Payment& payment){vector<ShowSeat*> selected;for(const auto& n:split(input)){auto* s=show.findShowSeat(n);if(!s){cout<<"Invalid seat number: "<<n<<"\n";return nullptr;}if(!s->isAvailable()){cout<<"Seat "<<n<<" is already BOOKED. Booking rejected.\n";return nullptr;}selected.push_back(s);}if(selected.empty()){cout<<"No seats selected.\n";return nullptr;}double total=calculator.calculate(selected);auto* booking=new Booking(&c,&show,selected,total);for(auto*s:selected)s->book();if(!payment.pay(total)){for(auto*s:selected)s->release();booking->fail();cout<<"Payment failed. Seats released.\n";return booking;}booking->confirm();TicketPrinter().print(*booking);return booking;} void cancel(Booking* b)const{if(!b||b->getStatus()!=BookingStatus::CONFIRMED){cout<<"Only a confirmed booking can be cancelled.\n";return;}for(auto*s:b->getSeats())s->release();b->cancel();cout<<"Booking cancelled. Seats are AVAILABLE again.\n";} };

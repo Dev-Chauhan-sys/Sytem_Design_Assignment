@@ -1,0 +1,36 @@
+
+===== MOVIE TICKET BOOKING =====
+1. Movies  2. Book  3. Cancel  4. My tickets  0. Exit
+Choose: [1] 3 Idiots
+[2] Interstellar
+Choose movie: [1] Screen-1 06:00 PM
+[2] Screen-2 09:00 PM
+Choose show: Seats: A1,A2,B1,B2,C1,C2 (available initially)
+Seats: Pay by: 1.UPI 2.Card 3.Cash: [UPI] Payment successful.
+
+================ TICKET ================
+Booking ID : BK1001
+Customer   : Badal Singh
+Movie      : 3 Idiots
+Screen     : Screen-1  06:00 PM
+Seats      : A1, B2
+Amount     : Rs.400.00
+Status     : CONFIRMED
+=========================================
+
+===== MOVIE TICKET BOOKING =====
+1. Movies  2. Book  3. Cancel  4. My tickets  0. Exit
+Choose: 
+================ TICKET ================
+Booking ID : BK1001
+Customer   : Badal Singh
+Movie      : 3 Idiots
+Screen     : Screen-1  06:00 PM
+Seats      : A1, B2
+Amount     : Rs.400.00
+Status     : CONFIRMED
+=========================================
+
+===== MOVIE TICKET BOOKING =====
+1. Movies  2. Book  3. Cancel  4. My tickets  0. Exit
+Choose: 

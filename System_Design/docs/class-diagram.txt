@@ -1,0 +1,13 @@
+CLASS DIAGRAM (text version)
+
+Cinema 1 ◆── 1..* Screen 1 ◆── 1..* Seat
+Show 1 ◆── 1..* ShowSeat
+Show ── Movie (aggregation)
+Show ── Screen (association)
+Booking ── Customer (association)
+Booking ◇── 1..* ShowSeat (aggregation)
+Booking ── Payment (association)
+Payment «abstract» <|── UpiPayment / CardPayment / CashPayment
+BookingService ──> Booking
+
+Each class has private attributes and public methods in the C++ implementation.

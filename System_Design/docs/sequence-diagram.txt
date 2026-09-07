@@ -1,0 +1,15 @@
+SEQUENCE DIAGRAM — book one seat and pay by UPI
+
+Customer -> BookingService: choose show / seat
+BookingService -> Show: get selected show
+BookingService -> ShowSeat: isAvailable()
+ShowSeat --> BookingService: true
+BookingService -> PriceCalculator: calculate(seat)
+PriceCalculator --> BookingService: total
+BookingService -> Booking: <<create>>
+BookingService -> Payment: <<create>> UpiPayment
+BookingService -> Payment: pay(total)
+Payment --> BookingService: true
+BookingService -> Booking: confirm()
+BookingService -> TicketPrinter: print(booking)
+TicketPrinter --> Customer: ticket printed
