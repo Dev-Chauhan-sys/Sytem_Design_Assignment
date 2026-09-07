@@ -68,8 +68,7 @@ int main()
     addSeats(*s2);
     cinema.addScreen(move(s2));
     vector<unique_ptr<Movie>> movies;
-    movies.push_back(make_unique<Movie>("3 Idiots", "Hindi", 170));
-    movies.push_back(make_unique<Movie>("Interstellar", "English", 169));
+    movies.push_back(make_unique<Movie>("Hanuman Ansh", "Hindi", 150));
     movies.push_back(make_unique<Movie>("The Odyssey", "English", 172));
     vector<unique_ptr<Show>> shows;
     shows.push_back(make_unique<Show>(movies[0].get(), cinema.getScreen(1), "06:00 PM"));
@@ -101,7 +100,7 @@ int main()
         }
         else if (ch == 2)
         {
-            cout << "[1] 3 Idiots\n[2] Interstellar\nChoose movie: ";
+            cout << "[1] Hanuman Ansh\n[2] The Odyssey\nChoose movie: ";
             int m;
             cin >> m;
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
